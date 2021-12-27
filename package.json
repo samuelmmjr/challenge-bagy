@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/samuelmmjr/challenge-bagy/issues"
   },
-  "homepage": "https://github.com/samuelmmjr/challenge-bagy#readme"
+  "homepage": "https://github.com/samuelmmjr/challenge-bagy#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "sequelize": "^7.0.0-alpha.2",
+    "sqlite3": "^5.0.2"
+  }
 }
