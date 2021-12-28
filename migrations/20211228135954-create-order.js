@@ -4,7 +4,6 @@ module.exports = {
     await queryInterface.createTable('Orders', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
@@ -17,10 +16,10 @@ module.exports = {
         onDelete: 'CASCADE'
       },
       dateOrder: {
-        type: DataTypes.DATE,
+        type: Sequelize.DATE,
       },
       parcelas: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
       },
       user_id: {
         type: Sequelize.INTEGER,
@@ -31,7 +30,7 @@ module.exports = {
         onDelete: 'CASCADE'
       },
       status: {
-        type: DataTypes.DOUBLE
+        type: Sequelize.DOUBLE
       },
       createdAt: {
         allowNull: false,

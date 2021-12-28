@@ -13,37 +13,37 @@ module.exports = {
         allowNull: false,
       },
       email: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: false,
       },
       cpf: {
-        type: DataTypes.NUMBER,
+        type: Sequelize.NUMBER,
         allowNull: false,
       },
       birthDate: {
-        type: DataTypes.DATE,
+        type: Sequelize.DATE,
         allowNull: false,
       },
       street: {
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       district: {
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       city: {
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       state: {
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       country: {
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       cep: {
-        type: DataTypes.NUMBER
+        type: Sequelize.NUMBER
       },
       number: {
-        type: DataTypes.NUMBER
+        type: Sequelize.NUMBER
       },
       createdAt: {
         allowNull: false,
