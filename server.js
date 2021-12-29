@@ -16,13 +16,19 @@ app.post('/users', (req, res) => {
     User.create(req.body).then(() => {
         res.send('user is created')
     })
-})
+});
 
 app.post('/products', (req, res) => {
     Product.create(req.body).then(() => {
         res.send('product is created')
     })
-})
+});
+
+app.post('/order', (req, res) => {
+    Order.create(req.body).then(() => {
+        res.send('order is created')
+    })
+});
 
 app.listen(PORT, () => {
     console.log(`ouvindo na porta ${PORT}`)

@@ -4,11 +4,14 @@ const sequelize = require('../database/configDB');
 class Order extends Model {}
 
 Order.init({
+
     id: {
     allowNull: false,
+    autoIncrement: true,
     primaryKey: true,
     type: DataTypes.INTEGER
     },
+
     product_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -16,12 +19,11 @@ Order.init({
     onUpdate: 'CASCADE',
     onDelete: 'CASCADE'
     },
-    dateOrder: {
-    type: DataTypes.DATE,
-    },
-    parcelas: {
+
+    installments: {
     type: DataTypes.STRING,
     },
+
     user_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -29,14 +31,18 @@ Order.init({
     onUpdate: 'CASCADE',
     onDelete: 'CASCADE'
     },
+
     status: {
     type: DataTypes.STRING
     },
+
     createdAt: {
     allowNull: false,
     type: DataTypes.DATE
     },
+
     },
+
     {
     sequelize,
     modelName: 'order'

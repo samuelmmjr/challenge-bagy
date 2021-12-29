@@ -4,34 +4,42 @@ const sequelize = require('../database/configDB');
 class Product extends Model {}
 
 Product.init({
+
     id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER
     },
+
     name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
+
     img: {
         type: DataTypes.STRING,
     },
+
     description: {
         type: DataTypes.STRING,
     },
+
     weight: {
         type: DataTypes.DOUBLE
     },
+
     price: {
         type: DataTypes.DOUBLE
     },
+    
     qtd_stock: {
         type: DataTypes.INTEGER,
     },
     },
     {
     sequelize,
+    timestamps: false,
     modelName: 'product'
 });
 
