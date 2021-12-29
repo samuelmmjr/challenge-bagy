@@ -10,7 +10,7 @@
 </h1>
 
 <h4 align="center"> 
-	🚧  🚀 Testes em construção...  🚧
+	🚧  🚀 Projeto em construção... por nunca ter visto as stack SQlite e Graphql, criei primeiramente a minha api utilizando Rest para garantir o funcionamento. Agora estou testanto a construção de Apis utilizando o graphql  🚧
 </h4>
 
 ### Features
