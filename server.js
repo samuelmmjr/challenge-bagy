@@ -1,5 +1,4 @@
 const express = require('express');
-const graphql = require('graphql');
 const { graphqlHTTP } = require('express-graphql')
 const sequelize = require('./database/configDB');
 const PORT = 3000;

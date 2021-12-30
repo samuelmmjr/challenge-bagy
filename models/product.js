@@ -1,53 +1,50 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../database/configDB');
+const { product } = require("./connection");
 
-class Product extends Model {}
+module.exports = (sequelize, DataTypes) => {
+    const Products = sequelize.define('Product', {
 
-Product.init({
+        id: {
+            allowNull: false,
+            autoIncrement: true,
+            primaryKey: true,
+            type: DataTypes.INTEGER
+        },
 
-    id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: DataTypes.INTEGER
-    },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
 
-    name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
+        img: {
+            type: DataTypes.STRING,
+        },
 
-    img: {
-        type: DataTypes.STRING,
-    },
+        description: {
+            type: DataTypes.STRING,
+        },
 
-    description: {
-        type: DataTypes.STRING,
-    },
+        weight: {
+            type: DataTypes.DOUBLE
+        },
 
-    weight: {
-        type: DataTypes.DOUBLE
-    },
-
-    price: {
-        type: DataTypes.DOUBLE
-    },
-    
-    qtd_stock: {
-        type: DataTypes.INTEGER,
-    },
-    },
-    {
-    sequelize,
-    timestamps: false,
-    modelName: 'product'
+        price: {
+            type: DataTypes.DOUBLE
+        },
+        
+        qtd_stock: {
+            type: DataTypes.INTEGER,
+        },
+        },
+        {
+            tableName: 'products',
+            timestamps: false,
 });
 
-Product.associate = (models) => {
-    Product.hasMany(models.Order, {
-        foreignKey: 'id',
-        as: 'product_id'
-    });
+    Products.associate = (models) => {
+        Products.hasMany(models.Order, {
+            foreignKey: 'id',
+            as: 'product_id'
+        });
 }
-
-module.exports = Product;
+    return Products
+};

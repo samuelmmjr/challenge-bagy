@@ -1,74 +1,67 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../database/configDB');
+const { users } = require("./connection");
 
-class User extends Model {}
+module.exports = (sequelize, DataTypes) => {
+    const Users = sequelize.define('User', {
 
-User.init({
-
-    id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: DataTypes.INTEGER
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            allowNull: false,
+            primaryKey: true
         },
-
-    fullName: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-
-    cpf: {
-        type: DataTypes.NUMBER,
-        allowNull: false,
-    },
-
-    birthDate: {
-        type: DataTypes.STRING,
-    },
+        fullName: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        cpf: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        birthdate: {
+            type: DataTypes.DATE,
+            allowNull: false
+        },
+        street: {
+            type: DataTypes.STRING
+        },
     
-    street: {
-        type: DataTypes.STRING
-    },
-
-    district: {
-        type: DataTypes.STRING
-    },
-
-    city: {
-        type: DataTypes.STRING
-    },
-
-    state: {
-        type: DataTypes.STRING
-    },
-    country: {
-        type: DataTypes.STRING
-    },
-
-    cep: {
-        type: DataTypes.NUMBER
-    },
-
-    number: {
-        type: DataTypes.NUMBER
-    }
-    },
-    {
-    sequelize,
-    timestamps: false,
-    modelName: 'user'
-});
-
-User.associate = (models) => {
-    User.hasMany(models.Order, {
-        foreignKey: 'id',
-        as: 'user_id'
+        district: {
+            type: DataTypes.STRING
+        },
+    
+        city: {
+            type: DataTypes.STRING
+        },
+    
+        state: {
+            type: DataTypes.STRING
+        },
+        country: {
+            type: DataTypes.STRING
+        },
+    
+        cep: {
+            type: DataTypes.NUMBER
+        },
+    
+        number: {
+            type: DataTypes.NUMBER
+        }
+    }, {
+        tableName: 'users',
+        timestamps: false,
     });
-}
 
-module.exports = User;
+    Users.associate = function (models) {
+        Users.hasMany(models.Order, {
+            foreignKey: 'id',
+            as: 'user_id'
+        });
+    }
+
+    return Users
+};
