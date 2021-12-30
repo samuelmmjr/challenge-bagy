@@ -15,11 +15,13 @@
 
 ### Features
 
-- [x] Armazenar informações no bamco SQLite.
-- [x] Utilizar GraphQL como linguagem de consulta.
-- [x] cadastro de usuário.
-- [x] Cadastro de Produto
-- [x] Registro de venda.
+- [x] armazenar informações no bamco SQLite.
+- [x] utilizar GraphQL como linguagem de consulta.
+- [x] consultar usuários
+- [ ] consultra produtos
+- [ ] cadastro de usuário.
+- [ ] cadastro de Produto
+- [ ] registro de venda.
 - [ ] enviar email para usuário.
 - [ ] remover quantidade de produto do estoque. 
 
