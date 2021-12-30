@@ -1,9 +1,7 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../database/configDB');
+const { order } = require("./connection");
 
-class Order extends Model {}
-
-Order.init({
+module.exports = (sequelize, DataTypes) => {
+    const Orders = sequelize.define('Order', {
 
     id: {
     allowNull: false,
@@ -44,8 +42,7 @@ Order.init({
     },
 
     {
-    sequelize,
     modelName: 'order'
 })
-
-module.exports = Order;
+    return Orders
+}
