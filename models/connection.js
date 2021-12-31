@@ -7,7 +7,7 @@ const Product = require('./product');
 const Order = require('./order');
 
 const users = Users(sequelize, DataTypes);
-const product = Product(sequelize, DataTypes);
-const order = Order(sequelize, DataTypes);
+const products = Product(sequelize, DataTypes);
+const orders = Order(sequelize, DataTypes);
 
-module.exports = { users, product, order };
+module.exports = { users, products, orders };
