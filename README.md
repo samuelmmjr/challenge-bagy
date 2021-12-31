@@ -18,7 +18,7 @@
 - [x] armazenar informações no bamco SQLite.
 - [x] utilizar GraphQL como linguagem de consulta.
 - [x] consultar usuários
-- [ ] consultra produtos
+- [x] consultra produtos
 - [ ] cadastro de usuário.
 - [ ] cadastro de Produto
 - [ ] registro de venda.
