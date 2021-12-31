@@ -1,4 +1,4 @@
-const { GraphQLObjectType, GraphQLSchema, GraphQLList, GraphQLInt, GraphQLString } = require('graphql');
+const { GraphQLObjectType, GraphQLSchema, GraphQLList, GraphQLInt } = require('graphql');
 const { users, products } = require('../models/connection');
 const { userType } = require('./typeDefs/userType');
 const { productType } = require('./typeDefs/productType');
@@ -8,6 +8,14 @@ const getAllUsers = {
     args: { id: { type: GraphQLInt }},
     resolve: (parent, args) => {
         return users.findAll()
+    }
+};
+
+const getUserById = {
+    type: new GraphQLList(userType),
+    args: { id: { type: GraphQLInt }},
+    resolve: (_parent, args) => {
+        return users.findByPk(args.id);
     }
 };
 
@@ -25,7 +33,9 @@ module.exports = new GraphQLSchema({
         name: "RootQuery",
         fields: {
             getAllUsers,
+            getUserById,
             getAllProducts,
         }
     })
 })
+
