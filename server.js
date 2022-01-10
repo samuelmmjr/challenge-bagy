@@ -9,11 +9,7 @@ sequelize.sync().then(() => console.log('db is ready'));
 const app = express();
 
 app.use(express.json());
-app.use('/graphql', graphqlHTTP({
-    schema,
-    graphiql: true
-}));
 
 app.listen(PORT, () => {
-    console.log(`ouvindo na porta ${PORT}`)
+    console.log(`listening on port${PORT}`)
 });
